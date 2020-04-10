@@ -207,19 +207,14 @@ body{
 
 
 /*Principio menu lateral derecho*/
-.menu-vertical{
-  text-decoration: none;
-  display: flex;
-  margin-top: 15%;
-  position: fixed;
 
-}
 a{
 list-style: none;
  text-decoration: none;
 }
 
 .menu-vertical-contenedor{
+  position: fixed;
 	display: flex;
 	flex-flow: column wrap;
 	margin-left: 10%;
@@ -232,10 +227,10 @@ list-style: none;
 	color: black;
   text-decoration: none;
 }
-.menu-vertical .active{
+#main-menu .active{
 	color: #FF6E33;
 	}
-.menu-vertical-contenedor a:hover{
+#main-menu .menu-vertical-contenedor a:hover{
 	color: #FF6E33;
 }
 .menu-vertical-item{
@@ -245,6 +240,7 @@ list-style: none;
 	margin: 2px;
 }
 /*Final menu lateral derecho*/
+
 
 /*Menu projects*/
 .menu-project{
@@ -311,13 +307,16 @@ list-style: none;
 
 /*Final formulario*/
 
+
+
 /*Páginas proyectos */
+
+
 /*BRAND IDENTITY*/
-.menu-vertical-bi{
+#main-menu .menu-vertical-pro{
   text-decoration: none;
   display: flex;
   margin-top: 15%;
-  position: fixed;
   align-items: flex-end;
 
 }
@@ -325,27 +324,64 @@ a{
 list-style: none;
  text-decoration: none;
 }
-
-.menu-vertical-contenedor-bi{
+#main-menu  .menu-vertical-contenedor-pro{
+  position: fixed;
 	display: flex;
 	flex-flow: column wrap;
-	margin-left: 10%;
+	margin-left: 5%;
 	margin-right: 10%;
   align-items: flex-end;
 	justify-content: space-between;
-
 }
-.menu-vertical-contenedor-bi a{
+.menu-vertical-contenedor-pro a{
 	color: black;
   text-decoration: none;
 }
-.menu-vertical-bi .active-bi{
+#main-menu  .menu-vertical-contenedor-pro-ed{
+  position: fixed;
+	display: flex;
+	flex-flow: column wrap;
+	margin-left: 5%;
+	margin-right: 10%;
+  align-items: flex-end;
+	justify-content: space-between;
+}
+.menu-vertical-contenedor-pro-ed a{
+	color: black;
+  text-decoration: none;
+}
+#main-menu  .menu-vertical-contenedor-pro-ti{
+  position: fixed;
+	display: flex;
+	flex-flow: column wrap;
+	margin-left: 5%;
+	margin-right: 10%;
+  align-items: flex-end;
+	justify-content: space-between;
+}
+.menu-vertical-contenedor-pro-ti a{
+	color: black;
+  text-decoration: none;
+}
+#main-menu .rojo{
 	color: #FF3232;
 	}
-.menu-vertical-contenedor-bi a:hover{
+#main-menu	.amarillo{
+    color: #FFDA23;
+  }
+#main-menu .azul{
+    color: #3248FF;
+  }
+.menu-vertical-contenedor-pro a:hover{
 	color: #FF3232;
 }
-.menu-vertical-item-bi{
+.menu-vertical-contenedor-pro-ed a:hover{
+	color: #FFDA23;
+}
+.menu-vertical-contenedor-pro-ti a:hover{
+	color: #3248FF;
+}
+.menu-vertical-item-pro{
 	list-style: none;
 	padding: 15px 15px;
 	flex-grow: 1;
@@ -360,4 +396,65 @@ list-style: none;
 }
 .fotoproh{
 	width: 30rem;
+}
+.fotoprop{
+	width: 15rem;
+	margin: 1rem;
+}
+
+/*Menu desplegable*/
+#main-menu{
+  text-decoration: none;
+  display: flex;
+	transition: 1s all ease;
+
+}
+a{
+list-style: none;
+ text-decoration: none;
+ display: block;
+}
+#main-menu:target{
+  right: 0px;
+}
+
+.toggle-menu{
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 1em;
+  color: grey;
+}
+
+.close-menu{
+display: block;
+width: 16px;
+height: 16px;
+background: #000;
+border-radius: 100%;
+color: #fff;
+}
+
+#main-menu:target + .backdrop{
+	color: black;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+}
+
+@media (min-width: 640px){
+  #main-menu{
+    position: static;
+    width: 100%;
+  }
+
+  .toggle-menu{
+    display: none;
+  }
+  #main-menu .close-menu{
+    display: none;
+  }
+
 }
